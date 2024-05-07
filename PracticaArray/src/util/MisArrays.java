@@ -87,6 +87,33 @@ public abstract class MisArrays {
 
         return numMax;
     }
+	
+	
+	/**
+	 * Devuelve la nota mas baja en int de los numeros que hay dentro de un array de numeros de tipo int
+	 * 
+	 * @param array de numeros	el array de los numeros que queremos obtener la nota mas baja
+	 * @return					el numero mas bajo que hay en el array de tipo int
+	 * @throws IllegalArgumentException	Excepcion lanzada si alguna nota no esta entre los parametros indicados
+	 */
+	public static int minimaNota(int[] notas) {
+        
+        int numMin = notas[0];
+        
+        for (int nota : notas) {
+        	
+            if (nota < 0 || nota > 10) {
+                throw new IllegalArgumentException("Las notas deben estar entre 0 y 10");
+            }
+            if (nota < numMin) {
+            	numMin = nota;
+            }
+        }
+
+        return numMin;
+    }
+	
+	
     
 
 }
